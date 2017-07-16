@@ -7,4 +7,17 @@ module.exports.name = (user, fullname)=>{
     user.firstname = name[0];
     user.lastname = name[1];
     return user;
-}
+};
+
+module.exports.asynAdd=(a,b,callback)=>{
+    setTimeout(()=>{
+        callback(a+b);
+    },1000); 
+};
+
+module.exports.asynSquare=(a,b)=>{
+    
+    setTimeout(()=>{
+        b(a*a);
+    },1000);
+};

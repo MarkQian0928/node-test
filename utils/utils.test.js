@@ -28,5 +28,20 @@ it('should set first and last name', ()=>{
         lastname:'Qian'
     });
     //expect(user).toEqual(res);
+});
 
+//done let mocha know this is asyn, and it not stop processing until done() is called
+it('should asyn add two numbers',(done)=>{
+    utils.asynAdd(3,4,(sum)=>{
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
+    
+});
+
+it('should asyn square two nubmers',(done)=>{
+    utils.asynSquare(3,(sum)=>{
+        expect(sum).toBe(9).toBeA('number');
+        done();
+    });
 });
